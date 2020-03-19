@@ -55,4 +55,17 @@ public class BST {
         return minv;
     }
 
+    public BinaryTreeNode search(BinaryTreeNode root, int data) {
+        // Base Cases: root is null or key is present at root
+        if (root == null || root.data == data)
+            return root;
+
+        // val is greater than root's key
+        if (root.data > data)
+            return search(root.left, data);
+
+        // val is less than root's key
+        return search(root.right, data);
+    }
+
 }
