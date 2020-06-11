@@ -135,9 +135,10 @@ public class LinkedListDS {
             return content;
         }
 
-        content += head.data + ", ";
+        if (head.next != null)
+                content = printReversed(head.next, content);
 
-        return printReversed(head.next, content);
+            return content + head.data + ", ";
     }
 
     // 8.  Write a Java function to print data of a linked list in a reverse order (hint: use recursion)
